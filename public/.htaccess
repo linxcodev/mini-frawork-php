@@ -1,0 +1,10 @@
+#dissable negosiation
+Options -Multiviews
+
+RewriteEngine On
+RewriteBase /coba/mini-framework/public
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
