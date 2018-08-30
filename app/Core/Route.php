@@ -19,6 +19,8 @@ class Route
     // mengecek file controller
     if ( file_exists('../app/Controllers/' . $url[0] . '.php')) {
       $this->controller = $url[0];
+    } else {
+      return require_once '../app/Views/eror/404.php';
     }
 
     // masuk ke file controller
@@ -31,6 +33,8 @@ class Route
     if (isset($url[1])) {
       if (method_exists($this->controller, $url[1])) {
         $this->method = $url[1];
+      } else {
+        return require_once '../app/Views/eror/404.php';
       }
     }
 
