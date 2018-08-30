@@ -2,7 +2,7 @@
 
 class Controller
 {
-  public function views($view)
+  public function views($view, $data = [])
   {
     require_once '../app/Views/' . $view . '.php';
   }
