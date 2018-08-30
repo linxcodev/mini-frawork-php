@@ -10,6 +10,8 @@ class Route
   {
     if (isset($_GET['url'])) {
       $url = explode('/', filter_var(trim($_GET['url']), FILTER_SANITIZE_URL));
+    } else {
+      $url[0] = 'home';
     }
 
     $url[0] = ucfirst($url[0]) . 'Controller';
