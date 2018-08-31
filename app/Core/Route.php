@@ -8,10 +8,12 @@ class Route
 
   function __construct()
   {
+    $url = null;
+
     if (isset($_GET['url'])) {
       $url = explode('/', filter_var(trim($_GET['url']), FILTER_SANITIZE_URL));
     } else {
-      $url[0] = 'home';
+      return require_once '../app/Views/eror/404.php';
     }
 
     $url[0] = ucfirst($url[0]) . 'Controller';

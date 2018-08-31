@@ -1,5 +1,6 @@
 <?php
 
+
 class Database {
 
   private static $_instance = null;
@@ -7,8 +8,10 @@ class Database {
 
   public function __construct()
   {
-    $this->mysqli = new mysqli('localhost', 'root', 'toor', 'mini_framework')
-                    or die('gagal menghubungkan database');
+    include '../app/database.php';
+
+    $this->mysqli = new mysqli($db['host'], $db['username'],
+    $db['password'], $db['database']) or die('gagal menghubungkan database');
   }
 
   public static function getInstance()
