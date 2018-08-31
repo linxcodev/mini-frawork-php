@@ -4,15 +4,13 @@ class HomeController extends Controller
 {
   public function index()
   {
-    $user = $this->models('User');
-
-    return $this->views('home', ['nama' => $user->name, 'umur' => $user->age]);
+    return $this->views('home');
   }
 
-  public function profile()
+  public function user()
   {
-    $user = $this->models('User');
+    $user = $this->models('User')->index();
 
-    echo "$user->name $user->age";
+    return $this->views('user', ['users' => $user]);
   }
 }

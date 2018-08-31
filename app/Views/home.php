@@ -7,8 +7,7 @@
   </head>
   <body>
     <div class="">
-      ini view dari home milik mas <b><?= $data['nama'] ?></b>
-      yang berumur <b><?= $data['umur'] ?></b>
+      ini view dari home
     </div>
   </body>
 </html>

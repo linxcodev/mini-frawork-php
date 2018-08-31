@@ -2,7 +2,15 @@
 
 class User
 {
-  public $name = "Fajrul";
-  public $age = 20;
+  private $db;
 
+  public function __construct()
+  {
+    $this->db = Database::getInstance();
+  }
+
+  public function index()
+  {
+    return $this->db->index('users');
+  }
 }
